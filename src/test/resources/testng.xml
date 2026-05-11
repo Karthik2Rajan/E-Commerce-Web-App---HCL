@@ -4,15 +4,21 @@
 
     <test name="Automation Tests">
         <classes>
+
             <class name="tests.LoginTest"/>
             <class name="tests.LogoutTest"/>
             <class name="tests.RegisterTest"/>
+
             <class name="tests.ProductTest"/>
-            <class name="tests.CartTest"/>
-            <class name="tests.CartValidationTest"/>
-            <class name="tests.CheckoutTest"/>
             <class name="tests.CategoryTest"/>
             <class name="tests.ProductDetailTest"/>
+
+            <class name="tests.CartTest"/>
+            <class name="tests.CartValidationTest"/>
+
+            <class name="tests.CheckoutTest"/>
+            <class name="tests.CheckoutWithoutLoginTest"/>
+
         </classes>
     </test>
 
