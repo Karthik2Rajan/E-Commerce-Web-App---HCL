@@ -6,24 +6,31 @@ import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.ProductPage;
 
-public class CartTest extends BaseTest {
+public class CartValidationTest extends BaseTest {
 
     @Test
-    public void testRemoveProductFromCart() {
+    public void testCartValidation() {
 
         ProductPage productPage = new ProductPage(driver);
         CartPage cartPage = new CartPage(driver);
 
         productPage.openProductsPage();
-
         productPage.addFirstProductToCart();
         productPage.continueShopping();
         productPage.goToCart();
 
-        Assert.assertTrue(cartPage.isCartDisplayed());
+        Assert.assertEquals(
+                cartPage.getCartProductName(),
+                "Blue Top"
+        );
 
-        cartPage.removeProduct();
+        Assert.assertFalse(
+                cartPage.getCartProductPrice().isEmpty()
+        );
 
-        Assert.assertTrue(cartPage.isCartEmpty());
+        Assert.assertEquals(
+                cartPage.getCartCount(),
+                "1"
+        );
     }
 }

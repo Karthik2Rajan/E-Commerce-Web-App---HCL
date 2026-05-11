@@ -10,6 +10,10 @@ public class CartPage extends BasePage {
     private By removeBtn = By.className("cart_quantity_delete");
     private By emptyCartMessage = By.xpath("//b[contains(text(),'Cart is empty')]");
 
+    private By productName = By.xpath("//td[@class='cart_description']/h4/a");
+    private By productPrice = By.xpath("//td[@class='cart_price']/p");
+    private By cartCount = By.className("disabled");
+
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -24,5 +28,17 @@ public class CartPage extends BasePage {
 
     public boolean isCartEmpty() {
         return isDisplayed(emptyCartMessage);
+    }
+
+    public String getCartProductName() {
+        return getText(productName);
+    }
+
+    public String getCartProductPrice() {
+        return getText(productPrice);
+    }
+
+    public String getCartCount() {
+        return getText(cartCount);
     }
 }
