@@ -27,6 +27,7 @@ public class ProductPage extends BasePage {
 
     public void openProductsPage() {
         click(productsBtn);
+        waitForVisibility(searchBox);
     }
 
     public void searchProduct(String productNameText) {

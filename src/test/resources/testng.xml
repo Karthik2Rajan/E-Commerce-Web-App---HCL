@@ -1,24 +1,25 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="E-Commerce-HCL-Suite" verbose="1">
 
-<suite name="HCL Hackathon Suite">
+    <!-- ✅ ADD THIS BLOCK -->
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
 
-    <test name="Automation Tests">
+    <test name="E-Commerce Tests">
         <classes>
-
-            <class name="tests.LoginTest"/>
-            <class name="tests.LogoutTest"/>
-            <class name="tests.RegisterTest"/>
-
-            <class name="tests.ProductTest"/>
-            <class name="tests.CategoryTest"/>
-            <class name="tests.ProductDetailTest"/>
-
             <class name="tests.CartTest"/>
             <class name="tests.CartValidationTest"/>
-
+            <class name="tests.CategoryTest"/>
             <class name="tests.CheckoutTest"/>
             <class name="tests.CheckoutWithoutLoginTest"/>
-
+            <class name="tests.LoginTest"/>
+            <class name="tests.LogoutTest"/>
+            <class name="tests.ProductDetailTest"/>
+            <class name="tests.ProductTest"/>
+            <class name="tests.RegisterTest"/>
+            <class name="tests.ValidationTest"/>
         </classes>
     </test>
 
